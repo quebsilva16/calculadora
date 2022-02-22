@@ -1,20 +1,3 @@
-$('.btn_continuar').on('click', function(){
-    let nombre = $('input[name=nombre]').val();
-    let apellido = $('input[name=apellido]').val();
-    let edad = $('input[name=edad]').val();
-
-    console.log(nombre);
-    console.log(apellido);
-    console.log(edad);
-
-    let texto = `
-    <h1>${nombre} ${apellido}</h1>
-    <h3>edad ${edad} anos </h3>
-    `;
-    $('#resultado').html(texto);
-});
-function operacion(){
-}
 var valor = $('button[value=1]').val();
 
     $('.btn_operacion').on('click', function(){ 
