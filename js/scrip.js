@@ -16,7 +16,7 @@ $('.btn_continuar').on('click', function(){
 var ope = ['suma', 'resta', 'multiplicacion', 'division'];
 function operacion(){
 }
-var valor = $('button[value=0]').val();
+var valor = $('button[value=1]').val();
 
     $('.btn_operacion').on('click', function(){ 
         if (valor <= 0){
@@ -51,33 +51,22 @@ $('.btn_resultado').on('click', function(){
     var dt2 = $('input[name=dt2]').val();
     if(valor <= 1){
         var suma = parseFloat(dt1) + parseFloat(dt2);
-           
-        let texto = `
-        <h1>${suma}</h1>
-        `;
-        $('#resultado').html(texto);
+        $("#resultado2").val(suma);
+
     }
     else if (valor <= 2){
         var resta = parseFloat(dt1) - parseFloat(dt2);
-           
-        let texto = `
-        <h1>${resta}</h1>
-        `;
-        $('#resultado').html(texto);
+        $("#resultado2").val(resta);
 
     }
     else if (valor <= 3){
         var multiplicacion = parseFloat(dt1) * parseFloat(dt2);
-           
-        let texto = `
-        <h1>${multiplicacion}</h1>
-        `;
-        $('#resultado').html(texto);
+        $("#resultado2").val(multiplicacion);
 
     }
     else if (valor <=4){
         var division = parseFloat(dt1) / parseFloat(dt2);
-           
+        $("#resultado2").val(division);           
     }
     
 
