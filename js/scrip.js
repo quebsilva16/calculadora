@@ -13,7 +13,6 @@ $('.btn_continuar').on('click', function(){
     `;
     $('#resultado').html(texto);
 });
-var ope = ['suma', 'resta', 'multiplicacion', 'division'];
 function operacion(){
 }
 var valor = $('button[value=1]').val();
@@ -68,59 +67,4 @@ $('.btn_resultado').on('click', function(){
         var division = parseFloat(dt1) / parseFloat(dt2);
         $("#resultado2").val(division);           
     }
-    
-
-        
-
-        
-
     });
-    /*var i = $("span");
-var toperacion = ['suma', 'resta', 'division', 'multiplicacion'];
-function operacion(){
-    let dt1 = $('input[name=dt1]').val();
-    let dt2 = $('input[name=dt2]').val();
-    suma = parseFloat(dt1) + parseFloat(dt2);
-    resta = parseFloat(dt1) - parseFloat(dt2);
-    multiplicacion = parseFloat(dt1) + parseFloat(dt2);
-    division = parseFloat(dt1) + parseFloat(dt2);
-}*/
-/*for ( i = 0; i < 3; i++){
-    i = 0
-}*/
-/*$('.btn_resultado').on('click', function(){
-    console.log(resultado);
-    let texto = `
-    <h1>${i}</h1>
-    `;
-    $('#resultado').html(texto);
-
-
-});*/
-
-/*
-var toperacion = ['suma', 'resta', 'division', 'multiplicacion'];
-var i = $("span");
-let fp1 = $('.btn_operacion').on('click', function(){
-    var i = $("span", this);
-    $("span", this).text("-");
-    $('.btn_operacion').on('click', function(){
-        $("span", this).text("*");
-        $('.btn_operacion').on('click', function(){
-            $("span", this).text("/");
-            $('.btn_operacion').on('click', function(){ 
-            });
-        });
-    });
-    
-
-
-});
-*/ 
-
-
-
-    
-
-
-
