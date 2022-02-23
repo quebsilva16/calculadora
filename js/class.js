@@ -1,83 +1,91 @@
 (() => {
-    var valor = $('button[value=1]').val();
     class Calculadora 
     {
-        constructor(operacion, resultado, dato1, dato2 )
+        constructor(signo, dato1, dato2)
         {
-            this.button_operacion = operacion;
-            this.button_resultado = resultado;
+            this.button_operacion =  $('.btn_operacion');
+            this.button_resultado =  $('.btn_resultado');
+            this.button_signo = signo;
             this.input_dato1 = dato1;
             this.input_dato2 = dato2;
         }
         signo()
         {
+
             
-            $('.btn_operacion').on('click', function()
+            this.button_operacion.on('click', function()
             {
-                if (valor <= 0)
+                if (this.button_signo == null)
                 {
-                    valor = parseFloat(valor) + 1;
-                    $("span", this).text("+");
-                    return valor;
+                    this.button_signo = $('button[value=1]').val();
                 }
-                else if (valor <= 1)
+               
+                if (this.button_signo <= 0)
                 {
-                    valor = parseFloat(valor) + 1;
+                    this.button_signo = parseFloat(this.button_signo) + 1;
+                    $("span").text("+");
+                    $('.btn_operacion').val("1");
+                }
+                else if (this.button_signo <= 1)
+                {
+                    this.button_signo = parseFloat(this.button_signo) + 1;
                     $("span").text("-");
-                    return valor;
+                    $('.btn_operacion').val("2");
                 }
-                else if (valor <= 2)
+                else if (this.button_signo <= 2)
                 {
-                    valor = parseFloat(valor) + 1;
-                    $("span", this).text("*");
-                    return valor;
+                    this.button_signo = parseFloat(this.button_signo) + 1;
+                    $("span").text("*");
+                    $('.btn_operacion').val("3");
                 }
-                else if (valor <= 3)
+                else if (this.button_signo <= 3)
                 {
-                    valor = parseFloat(valor) + 1;          
-                    $("span", this).text("/");
-                    return valor;
+                    this.button_signo = parseFloat(this.button_signo) + 1;          
+                    $("span").text("/");
+                    $('.btn_operacion').val("4");
+
                 }
-                else if (valor <= 4)
+                else if (this.button_signo <= 4)
                 {
-                    valor = 1;
-                    $("span", this).text("+");
-                    return valor;
-        
+                    $("span").text("+");
+                    $('.btn_operacion').val("1");
                 }
             });
         }
         operacion()
         {
-            let dt1 = $('input[name=dt1]').val();
-            let dt2 = $('input[name=dt2]').val();
-            if(valor == 1){
-                var suma = parseFloat(dt1) + parseFloat(dt2);
+            this.button_resultado.on('click', function()
+            {
+                this.input_dato1 = $('input[name=dt1]').val();
+                this.input_dato2 = $('input[name=dt2]').val();
+                this.button_signo = $('.btn_operacion').val();
+                console.log(this.button_signo);
+                if(this.button_signo <= 1){
+                    var suma = parseFloat(this.input_dato1) + parseFloat(this.input_dato2);
+                    $("#resultado2").val(suma);
+            
+                }
+                else if (this.button_signo <= 2){
+                    var resta = parseFloat(this.input_dato1) - parseFloat(this.input_dato2);
+                    $("#resultado2").val(resta);
+            
+                }
+                else if (this.button_signo <= 3){
+                    var multiplicacion = parseFloat(this.input_dato1) * parseFloat(this.input_dato2);
+                    $("#resultado2").val(multiplicacion);
+            
+                }
+                else if (this.button_signo <=4){
+                    var division = parseFloat(this.input_dato1) / parseFloat(this.input_dato2);
+                    $("#resultado2").val(division);           
+                }
+            });
 
-                $("#resultado2").val(suma);
-                console.log(suma);
-        
-            }
-            else if (valor <= 2){
-                var resta = parseFloat(dt1) - parseFloat(dt2);
-                $("#resultado2").val(resta);
-        
-            }
-            else if (valor <= 3){
-                var multiplicacion = parseFloat(dt1) * parseFloat(dt2);
-                $("#resultado2").val(multiplicacion);
-        
-            }
-            else if (valor <=4){
-                var division = parseFloat(dt1) / parseFloat(dt2);
-                $("#resultado2").val(division);           
-            }
         }
 
     }
     let operacion = new Calculadora();
     operacion.signo();
-     $('.btn_resultado').on('click', function(){
-        operacion.operacion();
-    });
+    operacion.operacion();
+    
 })();
