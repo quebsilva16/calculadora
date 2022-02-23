@@ -47,6 +47,7 @@
                 }
                 else if (this.button_signo <= 4)
                 {
+                    this.button_signo = 1;     
                     $("span").text("+");
                     $('.btn_operacion').val("1");
                 }
@@ -73,11 +74,14 @@
                 else if (this.button_signo <= 3){
                     var multiplicacion = parseFloat(this.input_dato1) * parseFloat(this.input_dato2);
                     $("#resultado2").val(multiplicacion);
-            
                 }
                 else if (this.button_signo <=4){
                     var division = parseFloat(this.input_dato1) / parseFloat(this.input_dato2);
-                    $("#resultado2").val(division);           
+                    if(division !== Number)
+                    {
+                        division = 0;
+                    }
+                    $("#resultado2").val(division);     
                 }
             });
 
