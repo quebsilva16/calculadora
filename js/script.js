@@ -1,28 +1,29 @@
 var valor = $('button[value=1]').val();
 
     $('.btn_operacion').on('click', function(){ 
-        if (valor <= 0){
+        if (valor <= 0)
+        {
             valor = parseFloat(valor) + 1;
-            console.log(valor);
             $("span", this).text("+");
         }
-        else if (valor <= 1){
+        else if (valor <= 1)
+        {
             valor = parseFloat(valor) + 1;
-            console.log(valor);
             $("span", this).text("-");
         }
-        else if (valor <= 2){
+        else if (valor <= 2)
+        {
             valor = parseFloat(valor) + 1;
-            console.log(valor);
             $("span", this).text("*");
         }
-        else if (valor <= 3){
-            valor = parseFloat(valor) + 1;
-            console.log(valor);           
+        else if (valor <= 3)
+        {
+            valor = parseFloat(valor) + 1;          
             $("span", this).text("/");
 
         }
-        else if (valor <= 4){
+        else if (valor <= 4)
+        {
             valor = 1;
             $("span", this).text("+");
 
