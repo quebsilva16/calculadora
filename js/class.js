@@ -77,12 +77,9 @@
                 }
                 else if (this.button_signo <=4){
                     var division = parseFloat(this.input_dato1) / parseFloat(this.input_dato2);
-                    if(this.input_dato1 == 0)
+                    if(this.input_dato1 == 0 || this.input_dato2 == 0 )
                     {
-                        if(this.input_dato2 == 0)
-                        {
-                            division = 0;
-                        }
+                        division = 'division invalida';
                     }
                     $("#resultado2").val(division);     
                 }
