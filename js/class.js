@@ -1,18 +1,13 @@
 (() => {
     class Calculadora 
     {
-        constructor(signo, dato1, dato2)
+        constructor()
         {
             this.button_operacion =  $('.btn_operacion');
             this.button_resultado =  $('.btn_resultado');
-            this.button_signo = signo;
-            this.input_dato1 = dato1;
-            this.input_dato2 = dato2;
         }
         signo()
         {
-
-            
             this.button_operacion.on('click', function()
             {
                 if (this.button_signo == null)
